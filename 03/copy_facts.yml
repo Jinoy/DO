@@ -1,0 +1,21 @@
+---
+- hosts: datacenter
+  sudo: yes
+  vars:
+    remote_dir: "/etc/ansible/facts.d"
+    fact_file: "/etc/ansible/facts.d/custom.fact"
+  tasks: 
+  - name: "Create Custom fact DIR"
+    file:
+      path: "{{ remote_dir }}"
+      state: "directory"
+
+  - name: "Insert custom fact file"
+    copy: 
+      src: files/custom.fact
+      dest: "{{ fact_file }}"
+      mode: 0755
+
+  - name: "Re-run setup to use custom facts"
+    setup: ~
+ 

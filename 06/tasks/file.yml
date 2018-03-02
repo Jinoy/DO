@@ -1,0 +1,10 @@
+---
+- hosts: datacenter
+  become_user: sudo
+
+  tasks:
+  - name: Ensure that FTP is installed
+    yum: name=vsftpd state=present
+    when: ansible_os_family == "RedHat"
+  - name: Start FTP Services
+    service: name=vsftpd enabled=yes state=started

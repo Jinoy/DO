@@ -1,0 +1,25 @@
+
+PLAY ***************************************************************************
+
+TASK [setup] *******************************************************************
+ok: [file]
+ok: [lamp]
+
+PLAY ***************************************************************************
+
+TASK [setup] *******************************************************************
+ok: [lamp]
+ok: [file]
+
+TASK [Create Custom fact DIR] **************************************************
+ok: [lamp]
+ok: [file]
+
+TASK [Insert custom fact file] *************************************************
+fatal: [file]: FAILED! => {"changed": false, "checksum": "6d54b8a60c10feb507248d69b33118f37e05134e", "failed": true, "msg": "Destination /etc/ansible/facts.d not writable"}
+fatal: [lamp]: FAILED! => {"changed": false, "checksum": "6d54b8a60c10feb507248d69b33118f37e05134e", "failed": true, "msg": "Destination /etc/ansible/facts.d not writable"}
+
+PLAY RECAP *********************************************************************
+file                       : ok=3    changed=0    unreachable=0    failed=1   
+lamp                       : ok=3    changed=0    unreachable=0    failed=1   
+

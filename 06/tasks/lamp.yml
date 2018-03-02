@@ -1,0 +1,12 @@
+---
+- hosts: datacenter
+  become_user: sudo
+
+  tasks:
+  - name: Ensure Apache is installed
+    yum: name=httpd state=present
+    when: ansible_os_family == "RedHat"
+  - name: Start Apache Services
+    service: name=httpd enabled=yes state=started
+  - name: Stop IPTABLES 
+    service: name=iptables state=stopped 

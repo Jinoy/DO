@@ -1,0 +1,13 @@
+lamp ansible_ssh_host=192.168.33.20
+file ansible_ssh_host=192.168.33.30
+
+[webserver]
+lamp
+file
+
+[datacenter:children]
+webserver
+
+[datacenter:children]
+ansible_ssh_user:vagrant
+ansible_ssh_pass:vagrant

@@ -1,0 +1,14 @@
+---
+- hosts: datacenter
+  become_user: sudo
+  tasks:
+    - name: "Setting Web Root"
+      file:
+        path: "/var/www/html"
+        state: "directory"
+
+    - name: "Setting ftp"
+      file:
+        path: "/var/ftp"
+        state: "directory"
+

@@ -1,0 +1,5 @@
+---
+- hosts: datacenter
+  become_user: sudo
+
+- include: ./tasks/lamp.yml

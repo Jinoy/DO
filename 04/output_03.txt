@@ -1,0 +1,23 @@
+
+PLAY ***************************************************************************
+
+TASK [setup] *******************************************************************
+ok: [Ansible2]
+ok: [Ansible1]
+
+TASK [Create Custom fact DIR] **************************************************
+ok: [Ansible1]
+ok: [Ansible2]
+
+TASK [Insert custom fact file] *************************************************
+changed: [Ansible1]
+changed: [Ansible2]
+
+TASK [Re-run setup to use custom facts] ****************************************
+ok: [Ansible1]
+ok: [Ansible2]
+
+PLAY RECAP *********************************************************************
+Ansible1                   : ok=4    changed=1    unreachable=0    failed=0   
+Ansible2                   : ok=4    changed=1    unreachable=0    failed=0   
+

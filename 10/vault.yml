@@ -1,0 +1,4 @@
+---
+- hosts: datacenter
+  become_user: sudo
+

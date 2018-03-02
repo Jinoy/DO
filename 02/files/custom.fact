@@ -1,0 +1,9 @@
+#!/bin/bash 
+DATE=`date`
+echo "{\"date\" : \"${DATE}\"}"
+
+SMB="smb_package = smb"
+FTP="ftp_package = ftp"
+DB="db_package = mariadb"
+WEB="web_package = http"
+
